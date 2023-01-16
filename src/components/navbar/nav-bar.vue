@@ -1,0 +1,75 @@
+<template>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img
+          src="https://bulma.io/images/bulma-logo.png"
+          width="112"
+          height="28"
+        />
+      </a>
+
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" @click="navigatorToHome"> Home </a>
+
+        <a class="navbar-item" @click="navigatorToDocument"> Documentation </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"> More </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item"> About </a>
+            <a class="navbar-item"> Jobs </a>
+            <a class="navbar-item"> Contact </a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item"> Report an issue </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light"> Log in </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+const navigatorToDocument = () => {
+  router.push('/document')
+}
+
+const navigatorToHome = () => {
+  router.push('/home')
+}
+</script>
+
+<style scoped>
+nav {
+  padding: 30px;
+}
+</style>
